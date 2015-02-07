@@ -74,16 +74,19 @@ public class LoginPrevention extends HttpServlet {
                 String comid = userPage.getId().trim();
               //  System.out.println("ad************************SSSSSSSsSSSSsssssfadsfdafasdfa"+comid + "end");
                 
-                if (comid.equals("419580614863785")){
-                              //  419580614863785
+//                if (comid.equals("419580614863785")){
+//                              //  419580614863785
+//                PrintWriter out=response.getWriter();
+//                out.println("xiangzhuusermainpage.jsp");
+//               // System.out.println("************************SSSSSSSsSSSSssss ");
+////                RequestDispatcher dispatcher = request.getRequestDispatcher("xiangzhuusermainpage.jsp");
+////                dispatcher.forward(request, response);
+//                
+//                 //response is a string itself  
+//                }
                 PrintWriter out=response.getWriter();
                 out.println("xiangzhuusermainpage.jsp");
-               // System.out.println("************************SSSSSSSsSSSSssss ");
-//                RequestDispatcher dispatcher = request.getRequestDispatcher("xiangzhuusermainpage.jsp");
-//                dispatcher.forward(request, response);
                 
-                 //response is a string itself  
-                }
             }
           
         

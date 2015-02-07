@@ -241,7 +241,7 @@ h3{
 /**** Begin Contact Form***/
 #contact{
 	width:440px;
-	float:right;
+	float:left;
 }
 #contact #title-sub-divider h3{
 	background-color:#FFF;

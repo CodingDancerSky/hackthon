@@ -29,18 +29,21 @@ and open the template in the editor.
         </servlet-mapping>
                     
                     
+       
+        
         <servlet>
-		<servlet-name>Test</servlet-name>
-		<servlet-class>
-			edu.cmu.Merchandise
-		</servlet-class>
-	</servlet>
+            <servlet-name>
+                merchandise
+            </servlet-name>
+            <servlet-class>
+                edu.cmu.Merchandise
+            </servlet-class>
+        </servlet>
 	
-	<servlet-mapping>
-            
-		<servlet-name>Test</servlet-name>
-		<url-pattern>/test</url-pattern>
 
-	</servlet-mapping>
+        <servlet-mapping>
+		<servlet-name>merchandise</servlet-name>
+		<url-pattern>/merchandise</url-pattern>
+        </servlet-mapping>
         	
 </web-app>

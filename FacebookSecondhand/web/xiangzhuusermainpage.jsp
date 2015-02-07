@@ -59,8 +59,10 @@
 	<!---BEGIN Header--->
 	<div id="header">
             
-    	<div id="header-logo"><h1>Scarlett - User Main Page</h1></div>
-        
+            <div id="header-logo" style="width:50px;height:50px;">
+                 <img style="width:60px; height:60px;"src="//graph.facebook.com/<% out.print(request.getSession().getAttribute("id"));%>/picture?type=large"/>
+                 <h1>Scarlett - User Main Page</h1></div>
+          
         <div id="header-tag"><h2>scarlett.</h2></div>
         <div id="header-social">
             <ul>
@@ -76,7 +78,7 @@
     <div class="slider-wrapper theme-default">
             <span id="slider-shadow"></span>
             <div id="slider" class="nivoSlider">
-                <a href="#"><img src="images/slider/slider-img-1.jpg" alt="" title="#htmlcaption1" /></a>
+                <a href="#"><img src="images/slider/slider-img-1.jpg" alt="" title="#htmlcaption1" height="42" width="42"/></a>
                 <a href="#"><img src="images/slider/slider-img-2.jpg" alt="" title="#htmlcaption2" /></a>
                 <a href="#"><img src="images/slider/slider-img-3.jpg" alt="" title="#htmlcaption3" /></a>
             </div>
@@ -106,7 +108,7 @@
             <a href="images/gallery/gallery-full6.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb6.jpg"/></a>
             <a href="images/gallery/gallery-full7.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb7.jpg"/></a>
             <a href="images/gallery/gallery-full8.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb8.jpg"/></a>
-            <a href="images/gallery/gallery-full9.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb9.jpg"/></a>
+            <a href="images/gallery/gallery-full9.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb9.JPG"/></a>
             <a href="images/gallery/gallery-full10.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb10.jpg"/></a>
         </div>
         
@@ -116,7 +118,7 @@
             <div id="about-col1">
             <div id="about-photo">
             	<span class="about-img-shadow"></span>
-            	<img src="images/about-photo.jpg" />
+            	 <img style="width:123px; height:136px;"src="//graph.facebook.com/<% out.print(request.getSession().getAttribute("id"));%>/picture?type=large"/>
             </div>
             	<ul>
                     
@@ -141,7 +143,7 @@
                 </ul>
             </div>
             <div id="about-col2">
-           <p> I like to collect varied goods and then share woth people. </p>
+           <p> I like to collect varied goods and then share with people. </p>
 
 <p>Enjoy it! </p>
             </div>
