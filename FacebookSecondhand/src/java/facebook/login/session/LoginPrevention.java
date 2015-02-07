@@ -51,9 +51,9 @@ public class LoginPrevention extends HttpServlet {
             HttpSession session=request.getSession();
             session.setAttribute("id", id);
             session.setAttribute("name", name);
-//            session.setAttribute("email", email);
-//            session.setAttribute("link", link);
-//            
+            session.setAttribute("email", email);
+            session.setAttribute("link", link);
+            
             
             
             User user=new User();
@@ -72,13 +72,15 @@ public class LoginPrevention extends HttpServlet {
             }
             else{
                 String comid = userPage.getId().trim();
-                System.out.println("ad************************SSSSSSSsSSSSsssssfadsfdafasdfa"+comid + "end");
+              //  System.out.println("ad************************SSSSSSSsSSSSsssssfadsfdafasdfa"+comid + "end");
                 
                 if (comid.equals("419580614863785")){
                               //  419580614863785
                 PrintWriter out=response.getWriter();
                 out.println("xiangzhuusermainpage.jsp");
-                System.out.println("************************SSSSSSSsSSSSssss ");
+               // System.out.println("************************SSSSSSSsSSSSssss ");
+//                RequestDispatcher dispatcher = request.getRequestDispatcher("xiangzhuusermainpage.jsp");
+//                dispatcher.forward(request, response);
                 
                  //response is a string itself  
                 }
@@ -127,5 +129,9 @@ public class LoginPrevention extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void render() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

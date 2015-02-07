@@ -64,7 +64,10 @@
         <div id="header-tag"><h2>scarlett.</h2></div>
         <div id="header-social">
             <ul>
-                <li><a href="#" class="facebook">Facebook</a></li>
+                <li>
+                
+             <a href="#" class="facebook"> Facebook</a>"
+               </li>
             </ul>
         </div>
     </div>
@@ -117,7 +120,14 @@
             </div>
             	<ul>
                     
-                    <li><a href="#">Facebook</a><li>
+                    <li>
+                <%
+                System.out.println(request.getSession().getAttribute("link"));
+                out.println("<a href=\""+
+                        request.getSession().getAttribute("link")+
+                        "\" >Facebook</a>");
+                %>
+                    <li>
                 </ul>
             </div>
             <div id="about-col2">

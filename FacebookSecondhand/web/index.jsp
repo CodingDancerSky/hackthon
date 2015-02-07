@@ -105,7 +105,7 @@ and open the template in the editor.
            id:response.id,
            email:response.email,
            link:response.link
-       },function(res){location=res});
+       },function(res){location=res;});
        
 
     });
