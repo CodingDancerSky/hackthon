@@ -4,6 +4,23 @@
     Author     : Scarlett
 --%>
 
+<%
+   String x="";
+   
+   System.out.print(session.getAttribute("name"));
+   if(session.getAttribute("name")==null){
+      response.sendRedirect("index.jsp");
+   }
+     
+//   System.out.print(x.isEmpty());
+
+   else{
+   x+=(String)session.getAttribute("name");
+   System.out.print(x);
+   }
+%>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

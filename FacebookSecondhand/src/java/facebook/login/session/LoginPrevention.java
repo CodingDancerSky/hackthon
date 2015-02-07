@@ -41,19 +41,19 @@ public class LoginPrevention extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            String id =request.getParameter("id");
+            String id =request.getParameter("id").trim();
             String name =request.getParameter("name");
+            String link=request.getParameter("link");
             String email=request.getParameter("email");
-            String link=request.getParameter("email");
            
             
 
             HttpSession session=request.getSession();
             session.setAttribute("id", id);
             session.setAttribute("name", name);
-            session.setAttribute("email", email);
-            session.setAttribute("link", link);
-            
+//            session.setAttribute("email", email);
+//            session.setAttribute("link", link);
+//            
             
             
             User user=new User();
@@ -63,10 +63,28 @@ public class LoginPrevention extends HttpServlet {
             user.setEmail(email);
             
             UserService us1=new UserService();
-            if(us1.findUserById(id)==null){
+            User userPage=new User();
+            userPage=us1.findUserById(id);
+            
+            if(userPage==null){
                UserService us2=new UserService();
                us2.add(user);
             }
+            else{
+                String comid = userPage.getId().trim();
+                System.out.println("ad************************SSSSSSSsSSSSsssssfadsfdafasdfa"+comid + "end");
+                
+                if (comid.equals("419580614863785")){
+                              //  419580614863785
+                PrintWriter out=response.getWriter();
+                out.println("xiangzhuusermainpage.jsp");
+                System.out.println("************************SSSSSSSsSSSSssss ");
+                
+                 //response is a string itself  
+                }
+            }
+          
+        
       
         
     }
