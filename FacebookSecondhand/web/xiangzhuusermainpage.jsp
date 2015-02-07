@@ -99,16 +99,16 @@
         <!---BEGIN Portfolio Gallery--->
         <div id="gallery">
             <div id="title-divider"><h3>Second-hand items</h3></div>
-            <a href="images/gallery/gallery-full1.jpeg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb1.jpeg"/></a>
-            <a href="images/gallery/gallery-full2.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb2.jpg"/></a>
-            <a href="images/gallery/gallery-full3.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb3.jpg"/></a>
-            <a href="images/gallery/gallery-full4.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb4.jpg"/></a>
-            <a href="images/gallery/gallery-full5.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb5.png"/></a>
-            <a href="images/gallery/gallery-full6.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb6.jpg"/></a>
-            <a href="images/gallery/gallery-full7.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb7.jpg"/></a>
-            <a href="images/gallery/gallery-full8.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb8.jpg"/></a>
-            <a href="images/gallery/gallery-full9.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb9.JPG"/></a>
-            <a href="images/gallery/gallery-full10.jpg" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb10.jpg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#6" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb1.jpeg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#7" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb2.jpg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#10" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb3.jpg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#11" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb4.jpg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#20" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb5.png"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#21" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb6.jpg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#22" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb7.jpg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#23" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb8.jpg"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#24" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb9.JPG"/></a>
+            <a href="/FacebookSecondhand/merchandise/example.html#25" class="item" rel="prettyPhoto[gallery1]"><span class="rollover"></span><span class="gallery-shadow"></span><img src="images/gallery/gallery-thumb10.jpg"/></a>
         </div>
         
         <!---BEGIN About Me--->
