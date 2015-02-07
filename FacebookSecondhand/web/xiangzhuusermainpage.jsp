@@ -58,11 +58,10 @@
 <div id="container">
 	<!---BEGIN Header--->
 	<div id="header">
-            
+
             <div id="header-logo" style="width:50px;height:50px;">
                  <img style="width:60px; height:60px;"src="//graph.facebook.com/<% out.print(request.getSession().getAttribute("id"));%>/picture?type=large"/>
                  <h1>Scarlett - User Main Page</h1></div>
-          
         <div id="header-tag"><h2>scarlett.</h2></div>
         <div id="header-social">
             <ul>

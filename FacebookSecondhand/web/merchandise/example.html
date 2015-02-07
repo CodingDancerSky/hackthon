@@ -6,6 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <title>Apple iPad 3rd Generation 32GB, Wi-Fi, 9.7in - White (MD329LL/A)</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,23 +65,35 @@ and open the template in the editor.
         <div class="row">
             <div class="large-9 push-3 columns">
 
-                <h3 class="style5"> Have a look at this great digital product! </h3>
 
-                <p class="style3">original oem charger included</p>
-                <p class="style3">m-edge supershell case included</p>
-                <p class="style3">hdmi cable included- you can plug into your tv or anything that uses hdmi</p>
-                <p class="style3">brand new glass, had to replace bumped one corner and it cracked :( there's a small dent on one corner</p>
-                <p class="style3">there also is a small piece of thread under the glass from the repair place,</p>
-                <p class="style3">but it's hardly noticeable check out the picture that says hola,</p>
-                <p class="style3">for general use you really can't see it, the only reason it stands out is because of the white welcome screen.</p>
+                <h3 class="style5" id="title"> Have a look at this great digital product! </h3>
+
+                
 
             </div>
-
             <div class="large-3 pull-9 columns">
-                <p><img src="image.jpg" style="width:50%;"/></p>
-                <p class="style4">Price: $300</p>
+                <img id="image" style="width:50%;" src="">
+                <!--p><img src="image.jpg" style="width:50%;"/></p-->
+                <p id="name" style="font-size: 40px"></p>
+                <p id="description"></p>
+                <p id="price" class="style4"></p>
+                <!--p class="style4">Price: $300</p-->
+                
                 <button type="button">Contact me for further information!</button>
             </div>
         </div>
+        
+        <script>
+            $.get("/FacebookSecondhand/merchandise",{id:6},function(res){
+                console.log(res);
+                //$("#title").html("oo"); 
+                $("#image").attr("src",res.url);
+                $("#name").html("Name: "+res.title);
+                $("#description").html("Description: "+res.description);
+                $("#price").html("$"+res.price);
+            })
+            
+        </script>
+
     </body>
 </html>
