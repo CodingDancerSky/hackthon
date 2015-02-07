@@ -88,6 +88,7 @@ public class Merchandise extends HttpServlet {
             if (rs.next()) {
                 try (PrintWriter out = response.getWriter()) {
                     /* TODO output your page here. You may use following sample code. */
+                    out.println(id);
                     out.println("{");
                     out.println("name:" + "'" + rs.getString("title") + "'");
                     out.println("}");
