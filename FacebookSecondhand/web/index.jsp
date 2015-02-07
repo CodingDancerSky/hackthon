@@ -31,7 +31,7 @@ and open the template in the editor.
                             </tr>
                     </table>
         </form>
-        <a href="merchandise/merchandise.html"> Merchandise </a>
+        <a href="merchandise/example.html"> Merchandise </a>
         <form action="test" method="get">
             <input type="submit"/>
         </form>
