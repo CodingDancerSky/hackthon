@@ -41,10 +41,10 @@ public class LoginPrevention extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            String id =request.getParameter("id");
+            String id =request.getParameter("id").trim();
             String name =request.getParameter("name");
+            String link=request.getParameter("link");
             String email=request.getParameter("email");
-            String link=request.getParameter("email");
            
             
 
@@ -63,10 +63,30 @@ public class LoginPrevention extends HttpServlet {
             user.setEmail(email);
             
             UserService us1=new UserService();
-            if(us1.findUserById(id)==null){
+            User userPage=new User();
+            userPage=us1.findUserById(id);
+            
+            if(userPage==null){
                UserService us2=new UserService();
                us2.add(user);
             }
+            else{
+                String comid = userPage.getId().trim();
+              //  System.out.println("ad************************SSSSSSSsSSSSsssssfadsfdafasdfa"+comid + "end");
+                
+                if (comid.equals("419580614863785")){
+                              //  419580614863785
+                PrintWriter out=response.getWriter();
+                out.println("xiangzhuusermainpage.jsp");
+               // System.out.println("************************SSSSSSSsSSSSssss ");
+//                RequestDispatcher dispatcher = request.getRequestDispatcher("xiangzhuusermainpage.jsp");
+//                dispatcher.forward(request, response);
+                
+                 //response is a string itself  
+                }
+            }
+          
+        
       
         
     }
@@ -109,5 +129,9 @@ public class LoginPrevention extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void render() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

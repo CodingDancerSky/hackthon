@@ -4,6 +4,23 @@
     Author     : Scarlett
 --%>
 
+<%
+   String x="";
+   
+   System.out.print(session.getAttribute("name"));
+   if(session.getAttribute("name")==null){
+      response.sendRedirect("index.jsp");
+   }
+     
+//   System.out.print(x.isEmpty());
+
+   else{
+   x+=(String)session.getAttribute("name");
+   System.out.print(x);
+   }
+%>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -47,7 +64,10 @@
         <div id="header-tag"><h2>scarlett.</h2></div>
         <div id="header-social">
             <ul>
-                <li><a href="#" class="facebook">Facebook</a></li>
+                <li>
+                
+             <a href="#" class="facebook"> Facebook</a>"
+               </li>
             </ul>
         </div>
     </div>
@@ -100,7 +120,14 @@
             </div>
             	<ul>
                     
-                    <li><a href="#">Facebook</a><li>
+                    <li>
+                <%
+                System.out.println(request.getSession().getAttribute("link"));
+                out.println("<a href=\""+
+                        request.getSession().getAttribute("link")+
+                        "\" >Facebook</a>");
+                %>
+                    <li>
                 </ul>
             </div>
             <div id="about-col2">
