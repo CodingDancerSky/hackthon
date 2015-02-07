@@ -19,8 +19,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.google.gson.Gson;
+
 
 /**
  *
@@ -61,6 +61,7 @@ public class Merchandise extends HttpServlet {
             con = DriverManager.getConnection(url);
             st = con.createStatement();
 
+
             rs = st.executeQuery("SELECT * FROM merchandise WHERE id =" + id);
             Gson gson = new Gson();
             if (rs.next()) {
@@ -72,6 +73,7 @@ public class Merchandise extends HttpServlet {
                             .setPrice(rs.getInt("price"))
                             .setUrl(rs.getString("url"));
                     out.println(gson.toJson(m));
+
                 }
             }
 
@@ -141,9 +143,9 @@ public class Merchandise extends HttpServlet {
                 st = con.createStatement();
             //INSERT INTO merchandise (title,description,price) VALUES ('fff','ggg',4);
 
-                try (PrintWriter out = response.getWriter()) {
+                /*try (PrintWriter out = response.getWriter()) {
                     out.println(query);
-                }
+                }*/
                 int isSuccess = st.executeUpdate(query);
                 System.out.println(isSuccess);
 
