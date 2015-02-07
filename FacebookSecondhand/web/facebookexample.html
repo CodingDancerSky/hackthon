@@ -1,25 +1,10 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>FaceBook SecondHand Extension</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        
-
-     
-       <h1> <img src="Facebook-logo-PSD.jpg"></h1>
-       <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-       </fb:login-button>
-  
-  
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
 <script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -92,25 +77,26 @@ and open the template in the editor.
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
-    
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
-
-        $.get( "login", { name: response.name},function(){ location="mainpage.jsp"});
-        
-        // 
-
     });
   }
 </script>
 
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 
 <div id="status">
 </div>
-
 
 </body>
 </html>
