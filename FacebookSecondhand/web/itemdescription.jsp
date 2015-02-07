@@ -13,7 +13,7 @@
                 <font color="black" align="left">ITEM DISPLAY</font>
                 <p><img src="images/item2.jpg" align="middle" width="400" height="600"></p>
             <font color="black" align="left">ITEM DESCRIPTION</font>
-            <p>I like the design of this gutar<br>very fancy</p>
+            <p>I like the design of this guitar<br>very fancy</p>
             <p>I believe you will love it</p>
             <font color="black" align="left">ITEM DETAILS</font>
             <p><font size="4">Size:</font></p>
@@ -21,6 +21,6 @@
             <font size="4">hand-made guitar</font> 
         </table>
     </div>  
-
-
+    
+    
 </html>
