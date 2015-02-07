@@ -84,7 +84,8 @@ and open the template in the editor.
         </div>
         
         <script>
-            $.get("/FacebookSecondhand/merchandise",{id:6},function(res){
+        var id = location.hash.replace('#',"")||"6";
+            $.get("/FacebookSecondhand/merchandise",{id:id},function(res){
                 console.log(res);
                 //$("#title").html("oo"); 
                 $("#image").attr("src",res.url);
