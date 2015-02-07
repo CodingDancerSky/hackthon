@@ -29,6 +29,9 @@ and open the template in the editor.
                                             <input type="reset" name="reset" value="cacel" />
                                     </td>
                             </tr>
+                            <tr>
+                                <td><a href="usermainpage.jsp">Main Page</a></td>
+                            </tr>
                     </table>
         </form>
 
