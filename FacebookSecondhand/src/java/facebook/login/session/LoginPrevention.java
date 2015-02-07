@@ -5,8 +5,15 @@
  */
 package facebook.login.session;
 
+import facebook.user.domain.User;
+import facebook.user.service.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,9 +53,21 @@ public class LoginPrevention extends HttpServlet {
             session.setAttribute("name", name);
             session.setAttribute("email", email);
             session.setAttribute("link", link);
- 
             
-                   
+            
+            
+            User user=new User();
+            user.setId(id);
+            user.setUsername(name);
+            user.setLink(link);
+            user.setEmail(email);
+            
+            UserService us1=new UserService();
+            if(us1.findUserById(id)==null){
+               UserService us2=new UserService();
+               us2.add(user);
+            }
+      
         
     }
 
