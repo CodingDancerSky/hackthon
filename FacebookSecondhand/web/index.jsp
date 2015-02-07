@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-
-
-
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
         <title>FaceBook SecondHand Extension</title>
@@ -10,6 +12,7 @@
     </head>
     <body>
         
+<<<<<<< HEAD
      
        <h1> <img src="Facebook-logo-PSD.jpg"></h1>
        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
@@ -114,9 +117,11 @@
 <div id="status">
 </div>
 
+    <a href="merchandise/merchandise.html"> Merchandise </a>
+        <form action="test" method="get">
+            <input type="submit"/>
+    </form>
 
 </body>
 </html>
- 
-        
-
+   
