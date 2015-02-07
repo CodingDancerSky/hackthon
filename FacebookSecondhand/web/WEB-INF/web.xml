@@ -20,6 +20,10 @@ and open the template in the editor.
 		</servlet-class>
 	</servlet>
         <servlet>
+<<<<<<< HEAD
+=======
+
+>>>>>>> guanw
             <servlet-name>
                 merchandise
             </servlet-name>
