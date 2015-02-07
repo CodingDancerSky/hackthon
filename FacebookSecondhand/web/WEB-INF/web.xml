@@ -20,8 +20,17 @@ and open the template in the editor.
 		</servlet-class>
 	</servlet>
         <servlet>
+<<<<<<< HEAD
             <servlet-name>merchandise</servlet-name>
             <servlet-class>edu.cmu.Merchandise</servlet-class>
+=======
+            <servlet-name>
+                merchandise
+            </servlet-name>
+            <servlet-class>
+                edu.cmu.Merchandise
+            </servlet-class>
+>>>>>>> origin/xiaohan
         </servlet>
 	
 	<servlet-mapping>

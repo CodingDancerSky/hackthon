@@ -94,15 +94,18 @@ and open the template in the editor.
     
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
+//      console.log('Successful login for: ' + response.name+" n  "+response.constructor+"  c  "
+//              +response.status+" s  "+response.prototype+"  p   ");
+    console.log(response);
+    console.log(response.id);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
 
-        $.get( "login", { name: response.name},function(){ location="mainpage.jsp"});
-
-        
-        // 
-
+       $.get( "login", {name: response.name,
+           id:response.id,
+           email:response.email,
+           link:response.link
+       },function(){ location="mainpage.jsp"});
     });
   }
 </script>

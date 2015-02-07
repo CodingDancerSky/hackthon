@@ -33,28 +33,22 @@ public class LoginPrevention extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+            String id =request.getParameter("id");
             String name =request.getParameter("name");
-            System.out.print(name);
+            String email=request.getParameter("email");
+            String link=request.getParameter("email");
+           
+            
 
             HttpSession session=request.getSession();
+            session.setAttribute("id", id);
             session.setAttribute("name", name);
-         //   String sname=(String) session.getAttribute("name"); //this is an obj
-           
-//            try (PrintWriter out = response.getWriter()) {
-//                 out.println("<h1>"+sname+"</h1>"); 
-//             }
+            session.setAttribute("email", email);
+            session.setAttribute("link", link);
+ 
             
-            System.out.print(session.getAttribute("name"));
-     //     System.out.print(response);
-            
-            
-            
-            
-//            RequestDispatcher dispatcher = request.getRequestDispatcher("mainpage.jsp");
-//            dispatcher.forward(request, response);
-            
-            
-            
+                   
         
     }
 
