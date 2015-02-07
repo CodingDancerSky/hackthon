@@ -24,5 +24,17 @@ and open the template in the editor.
 		<servlet-name>HashCode</servlet-name>
 		<url-pattern>/HashCode</url-pattern>
 	</servlet-mapping>-->
+        <servlet>
+		<servlet-name>HashCode</servlet-name>
+		<servlet-class>
+			server.ComputeHashes
+		</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>HashCode</servlet-name>
+		<url-pattern>/HashCode</url-pattern>
+	</servlet-mapping>
+        
         	
 </web-app>
