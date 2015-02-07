@@ -12,6 +12,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +36,7 @@ public class Merchandise extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response, String message)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -45,7 +47,7 @@ public class Merchandise extends HttpServlet {
             out.println("<title>Servlet Merchandise</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Merchandise at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Merchandise at " +message + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -130,17 +132,66 @@ public class Merchandise extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        if (request.getParameter("ItemName") == null) {
+            processRequest(request, response,"NULL");
+        } else {
+            //out.println("receive a post request");
+            try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("receive a post request");
+            out.println(request.getParameter("ItemName").toString());
+        }
+            //processRequest(request, response,request.getParameter("ItemName").toString());
+            String itemName=request.getParameter("ItemName").toString();
+            String price=request.getParameter("Price").toString();
+            String description=request.getParameter("Description").toString();
+            String url=request.getParameter("Url").toString();
+            
+            Connection con = null;
+            Statement st = null;
+            ResultSet rs = null;
+            String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+            String sqlUrl = "jdbc:sqlserver://y0i0qxm7zw.database.windows.net:1433;database=tartan;user=tartan@y0i0qxm7zw;password=Z3nfuzVfq77vo497IwC0;encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+            String query="INSERT INTO merchandise (title,description,price,url) VALUES ('"+itemName+"','"+description+"','"+price+"','"+url+"')";
+            System.out.println(query);
+            try {
+            //Class.forName(driver).newInstance();
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(sqlUrl);
+            st = con.createStatement();
+            //INSERT INTO merchandise (title,description,price) VALUES ('fff','ggg',4);
+            
+            try (PrintWriter out = response.getWriter()) {
+                out.println(query);
+            }
+            int isSuccess=st.executeUpdate(query);
+            System.out.println(isSuccess);
+            
+
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }   catch (ClassNotFoundException ex) {
+                Logger.getLogger(Merchandise.class.getName()).log(Level.SEVERE, null, ex);
+            }finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+
+            } catch (SQLException ex) {
+//                Logger lgr = Logger.getLogger(Version.class.getName());
+//                lgr.log(Level.WARNING, ex.getMessage(), ex);
+                ex.printStackTrace();
+            }
+        }
+        
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
+  }
 }
