@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         
    
-        <form action="#" method="post">
+        <form action="#" method="get">
                     <table>
                             <tr>
                                     <td>UserName:</td>
@@ -32,7 +32,8 @@ and open the template in the editor.
                     </table>
         </form>
         <a href="merchandise/merchandise.html"> Merchandise </a>
+        <form action="test" method="get">
+            <input type="submit"/>
+        </form>
     </body>
 </html> 
-        
-

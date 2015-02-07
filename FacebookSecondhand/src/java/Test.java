@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  * @author Sean
  */
 @WebServlet(urlPatterns = {"/test"})
-public class test extends HttpServlet {
+public class Test extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -66,24 +66,28 @@ public class test extends HttpServlet {
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;
-        String url = "jdbc:mysql://localhost:3306/testdb";
-        String user = "testuser";
-        String password = "test623";
+        String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        String url = "jdbc:sqlserver://y0i0qxm7zw.database.windows.net:1433;database=tartan;user=tartan@y0i0qxm7zw;password=Z3nfuzVfq77vo497IwC0;encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+       
 
         try {
-            con = DriverManager.getConnection(url, user, password);
+            //Class.forName(driver).newInstance();
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(url);
             st = con.createStatement();
             rs = st.executeQuery("SELECT VERSION()");
 
             if (rs.next()) {
-                System.out.println(rs.getString(1));
+                System.out.println("Version:" + rs.getString(1));
             }
 
         } catch (SQLException ex) {
 //            Logger lgr = Logger.getLogger();
 //            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-
-        } finally {
+           ex.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
+        }finally {
             try {
                 if (rs != null) {
                     rs.close();
@@ -98,6 +102,7 @@ public class test extends HttpServlet {
             } catch (SQLException ex) {
 //                Logger lgr = Logger.getLogger(Version.class.getName());
 //                lgr.log(Level.WARNING, ex.getMessage(), ex);
+                ex.printStackTrace();
             }
         }
         processRequest(request, response);

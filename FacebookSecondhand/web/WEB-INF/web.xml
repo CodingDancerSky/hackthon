@@ -16,7 +16,7 @@ and open the template in the editor.
         <servlet>
 		<servlet-name>Test</servlet-name>
 		<servlet-class>
-			server.test
+			Test
 		</servlet-class>
 	</servlet>
 	
