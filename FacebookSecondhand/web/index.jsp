@@ -11,7 +11,6 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
 
      
        <h1> <img src="Facebook-logo-PSD.jpg"></h1>
@@ -100,6 +99,7 @@ and open the template in the editor.
         'Thanks for logging in, ' + response.name + '!';
 
         $.get( "login", { name: response.name},function(){ location="mainpage.jsp"});
+
         
         // 
 
