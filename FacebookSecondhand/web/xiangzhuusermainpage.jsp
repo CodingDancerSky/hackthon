@@ -58,9 +58,9 @@
 <div id="container">
 	<!---BEGIN Header--->
 	<div id="header">
-            
-            <div id="header-logo" style="width:50;height:50" ><h1>Scarlett - User Main Page</h1></div>
-        
+            <div id="header-logo" style="width:50px;height:50px;">
+                 <img style="width:60px; height:60px;"src="//graph.facebook.com/<% out.print(request.getSession().getAttribute("id"));%>/picture?type=large"/>
+                 <h1>Scarlett - User Main Page</h1></div>
         <div id="header-tag"><h2>scarlett.</h2></div>
         <div id="header-social">
             <ul>
@@ -116,16 +116,26 @@
             <div id="about-col1">
             <div id="about-photo">
             	<span class="about-img-shadow"></span>
-            	<img src="images/about-photo.jpg" />
+            	 <img style="width:123px; height:136px;"src="//graph.facebook.com/<% out.print(request.getSession().getAttribute("id"));%>/picture?type=large"/>
             </div>
             	<ul>
                     
                     <li>
                 <%
                 System.out.println(request.getSession().getAttribute("link"));
-                out.println("<a href=\""+
+                out.println("<h1><a href=\""+
                         request.getSession().getAttribute("link")+
-                        "\" >Facebook</a>");
+                        "\" >Facebook</a></h1>"+"<br>");
+                out.println("<h1>"+ 
+                        request.getSession().getAttribute("email")+
+                         "</h1><br>");
+                out.println("<h1>"+ 
+                        request.getSession().getAttribute("name")+
+                         "</h1>");
+                
+                
+                
+                
                 %>
                     <li>
                 </ul>
