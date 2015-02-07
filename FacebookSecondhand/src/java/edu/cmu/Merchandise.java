@@ -143,9 +143,9 @@ public class Merchandise extends HttpServlet {
                 st = con.createStatement();
             //INSERT INTO merchandise (title,description,price) VALUES ('fff','ggg',4);
 
-                try (PrintWriter out = response.getWriter()) {
+                /*try (PrintWriter out = response.getWriter()) {
                     out.println(query);
-                }
+                }*/
                 int isSuccess = st.executeUpdate(query);
                 System.out.println(isSuccess);
 

@@ -29,6 +29,8 @@
                 <input type="text" name="email"  value="Image" style="width:300px"/>
                 <textarea id="comment"></textarea>
                 <input type="submit" value="submit" id="submit" />
+                
+                
             </form>
         </div>
         
@@ -53,5 +55,8 @@
 		$(".image a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal', theme:'dark_rounded', social_tools:false, slideshow:false, autoplay_slideshow: false});
 	});
 	</script>
+        
+        
+        
 </body>
 </html>
