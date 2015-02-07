@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-
-
-
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
         <title>FaceBook SecondHand Extension</title>
@@ -29,27 +31,9 @@
                             </tr>
                     </table>
         </form>
-        
-
+        <a href="merchandise/merchandise.html"> Merchandise </a>
+        <form action="test" method="get">
+            <input type="submit"/>
+        </form>
     </body>
 </html> 
-
- <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : 'your-app-id',
-          xfbml      : true,
-          version    : 'v2.1'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
-        
-

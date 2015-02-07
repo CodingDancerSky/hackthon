@@ -13,28 +13,16 @@ and open the template in the editor.
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>	
         
-<!--        <servlet>
-		<servlet-name>HashCode</servlet-name>
-		<servlet-class>
-			server.ComputeHashes
-		</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>HashCode</servlet-name>
-		<url-pattern>/HashCode</url-pattern>
-	</servlet-mapping>-->
         <servlet>
-		<servlet-name>HashCode</servlet-name>
+		<servlet-name>Test</servlet-name>
 		<servlet-class>
-			server.ComputeHashes
+			Test
 		</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>HashCode</servlet-name>
-		<url-pattern>/HashCode</url-pattern>
+		<servlet-name>Test</servlet-name>
+		<url-pattern>/test</url-pattern>
 	</servlet-mapping>
-        
         	
 </web-app>
