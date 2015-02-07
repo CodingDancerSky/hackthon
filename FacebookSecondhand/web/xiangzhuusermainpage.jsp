@@ -123,9 +123,19 @@
                     <li>
                 <%
                 System.out.println(request.getSession().getAttribute("link"));
-                out.println("<a href=\""+
+                out.println("<h1><a href=\""+
                         request.getSession().getAttribute("link")+
-                        "\" >Facebook</a>");
+                        "\" >Facebook</a></h1>"+"<br>");
+                out.println("<h1>"+ 
+                        request.getSession().getAttribute("email")+
+                         "</h1><br>");
+                out.println("<h1>"+ 
+                        request.getSession().getAttribute("name")+
+                         "</h1>");
+                
+                
+                
+                
                 %>
                     <li>
                 </ul>
