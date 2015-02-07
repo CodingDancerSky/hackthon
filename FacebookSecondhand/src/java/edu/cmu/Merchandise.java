@@ -29,32 +29,6 @@ import com.google.gson.Gson;
 @WebServlet(name = "Merchandise", urlPatterns = {"/merchandise"})
 public class Merchandise extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response, String message)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Merchandise</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Merchandise at " +message + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -73,6 +47,7 @@ public class Merchandise extends HttpServlet {
         ResultSet rs = null;
         String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String url = "jdbc:sqlserver://y0i0qxm7zw.database.windows.net:1433;database=tartan;user=tartan@y0i0qxm7zw;password=Z3nfuzVfq77vo497IwC0;encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+
         String id = request.getParameter("id");
         if (id == null) {
             try (PrintWriter out = response.getWriter()) {
@@ -85,23 +60,22 @@ public class Merchandise extends HttpServlet {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(url);
             st = con.createStatement();
-            rs = st.executeQuery("SELECT * FROM merchandise WHERE id ="+id);
+
+            rs = st.executeQuery("SELECT * FROM merchandise WHERE id =" + id);
             Gson gson = new Gson();
             if (rs.next()) {
                 try (PrintWriter out = response.getWriter()) {
                     /* TODO output your page here. You may use following sample code. */
                     MerchandiseObject m = new MerchandiseObject();
                     m.setTitle(rs.getString("title"))
-                     .setDescription(rs.getString("description"))
-                     .setPrice(rs.getInt("price"))
-                     .setUrl(rs.getString("url"));
+                            .setDescription(rs.getString("description"))
+                            .setPrice(rs.getInt("price"))
+                            .setUrl(rs.getString("url"));
                     out.println(gson.toJson(m));
                 }
             }
 
         } catch (SQLException ex) {
-//            Logger lgr = Logger.getLogger();
-//            lgr.log(Level.SEVERE, ex.getMessage(), ex);
             ex.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
@@ -123,7 +97,6 @@ public class Merchandise extends HttpServlet {
                 ex.printStackTrace();
             }
         }
-
     }
 
     /**
@@ -138,65 +111,66 @@ public class Merchandise extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if (request.getParameter("ItemName") == null) {
-            processRequest(request, response,"NULL");
+            try (PrintWriter out = response.getWriter()) {
+                out.println("{\"message\":\"item name is required\"}");
+            }
         } else {
             //out.println("receive a post request");
             try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("receive a post request");
-            out.println(request.getParameter("ItemName").toString());
-        }
+                /* TODO output your page here. You may use following sample code. */
+                out.println("receive a post request");
+                out.println(request.getParameter("ItemName").toString());
+            }
             //processRequest(request, response,request.getParameter("ItemName").toString());
-            String itemName=request.getParameter("ItemName").toString();
-            String price=request.getParameter("Price").toString();
-            String description=request.getParameter("Description").toString();
-            String url=request.getParameter("Url").toString();
-            
+            String itemName = request.getParameter("ItemName").toString();
+            String price = request.getParameter("Price").toString();
+            String description = request.getParameter("Description").toString();
+            String url = request.getParameter("Url").toString();
+
             Connection con = null;
             Statement st = null;
             ResultSet rs = null;
             String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
             String sqlUrl = "jdbc:sqlserver://y0i0qxm7zw.database.windows.net:1433;database=tartan;user=tartan@y0i0qxm7zw;password=Z3nfuzVfq77vo497IwC0;encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-            String query="INSERT INTO merchandise (title,description,price,url) VALUES ('"+itemName+"','"+description+"','"+price+"','"+url+"')";
+            String query = "INSERT INTO merchandise (title,description,price,url) VALUES ('" + itemName + "','" + description + "','" + price + "','" + url + "')";
             System.out.println(query);
             try {
-            //Class.forName(driver).newInstance();
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection(sqlUrl);
-            st = con.createStatement();
+                //Class.forName(driver).newInstance();
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                con = DriverManager.getConnection(sqlUrl);
+                st = con.createStatement();
             //INSERT INTO merchandise (title,description,price) VALUES ('fff','ggg',4);
-            
-            try (PrintWriter out = response.getWriter()) {
-                out.println(query);
-            }
-            int isSuccess=st.executeUpdate(query);
-            System.out.println(isSuccess);
-            
 
-        } catch (SQLException ex) {
-           ex.printStackTrace();
-        }   catch (ClassNotFoundException ex) {
-                Logger.getLogger(Merchandise.class.getName()).log(Level.SEVERE, null, ex);
-            }finally {
-            try {
-                if (rs != null) {
-                    rs.close();
+                try (PrintWriter out = response.getWriter()) {
+                    out.println(query);
                 }
-                if (st != null) {
-                    st.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
+                int isSuccess = st.executeUpdate(query);
+                System.out.println(isSuccess);
 
             } catch (SQLException ex) {
+                ex.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Merchandise.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    if (rs != null) {
+                        rs.close();
+                    }
+                    if (st != null) {
+                        st.close();
+                    }
+                    if (con != null) {
+                        con.close();
+                    }
+
+                } catch (SQLException ex) {
 //                Logger lgr = Logger.getLogger(Version.class.getName());
 //                lgr.log(Level.WARNING, ex.getMessage(), ex);
-                ex.printStackTrace();
+                    ex.printStackTrace();
+                }
             }
-        }
-        
-    }
 
-  }
+        }
+
+    }
 }
