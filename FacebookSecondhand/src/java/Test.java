@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.Cookie;
 /**
  *
  * @author Sean
@@ -69,7 +70,12 @@ public class Test extends HttpServlet {
         String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String url = "jdbc:sqlserver://y0i0qxm7zw.database.windows.net:1433;database=tartan;user=tartan@y0i0qxm7zw;password=Z3nfuzVfq77vo497IwC0;encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
        
-
+        System.out.println(request.getHeaderNames());
+        Cookie[] s=request.getCookies();
+        /*for(int i=0;i<s.length;i++){
+            System.out.println(s.)
+        }*/
+        //request.getHeaderNames()
         try {
             //Class.forName(driver).newInstance();
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
