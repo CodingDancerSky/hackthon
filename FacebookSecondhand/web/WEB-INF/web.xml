@@ -25,15 +25,15 @@ and open the template in the editor.
 		<url-pattern>/HashCode</url-pattern>
 	</servlet-mapping>-->
         <servlet>
-		<servlet-name>HashCode</servlet-name>
+		<servlet-name>login</servlet-name>
 		<servlet-class>
-			server.ComputeHashes
+			facebook.login.session.LoginPrevention
 		</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>HashCode</servlet-name>
-		<url-pattern>/HashCode</url-pattern>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
         
         	
