@@ -11,8 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
-<<<<<<< HEAD
+
      
        <h1> <img src="Facebook-logo-PSD.jpg"></h1>
        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
@@ -106,8 +105,8 @@ and open the template in the editor.
            id:response.id,
            email:response.email,
            link:response.link
-       },function(){ location="mainpage.jsp"});
-        
+       },function(res){location=res});
+       
 
     });
   }
@@ -116,11 +115,6 @@ and open the template in the editor.
 
 <div id="status">
 </div>
-
-    <a href="merchandise/merchandise.html"> Merchandise </a>
-        <form action="test" method="get">
-            <input type="submit"/>
-    </form>
 
 </body>
 </html>
