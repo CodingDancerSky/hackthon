@@ -42,7 +42,7 @@ public class Merchandise extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Merchandise</title>");            
+            out.println("<title>Servlet Merchandise</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Merchandise at " + request.getContextPath() + "</h1>");
@@ -69,20 +69,25 @@ public class Merchandise extends HttpServlet {
         ResultSet rs = null;
         String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String url = "jdbc:sqlserver://y0i0qxm7zw.database.windows.net:1433;database=tartan;user=tartan@y0i0qxm7zw;password=Z3nfuzVfq77vo497IwC0;encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-       
-
+        String id = request.getParameter("id");
+        if (id == null) {
+            try (PrintWriter out = response.getWriter()) {
+                out.println("{error:'no id'}");
+            }
+            return;
+        }
         try {
             //Class.forName(driver).newInstance();
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(url);
             st = con.createStatement();
-            rs = st.executeQuery("SELECT * FROM merchandise");
+            rs = st.executeQuery("SELECT * FROM merchandise WHERE id ="+id);
 
             if (rs.next()) {
                 try (PrintWriter out = response.getWriter()) {
                     /* TODO output your page here. You may use following sample code. */
                     out.println("{");
-                    out.println(rs.getString("title"));
+                    out.println("name:" + "'" + rs.getString("title") + "'");
                     out.println("}");
                 }
             }
@@ -90,10 +95,10 @@ public class Merchandise extends HttpServlet {
         } catch (SQLException ex) {
 //            Logger lgr = Logger.getLogger();
 //            lgr.log(Level.SEVERE, ex.getMessage(), ex);
-           ex.printStackTrace();
-        } catch (Exception e){
+            ex.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 if (rs != null) {
                     rs.close();
@@ -111,7 +116,7 @@ public class Merchandise extends HttpServlet {
                 ex.printStackTrace();
             }
         }
-        
+
     }
 
     /**
