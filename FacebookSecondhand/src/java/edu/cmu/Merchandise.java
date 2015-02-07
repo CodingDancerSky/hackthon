@@ -19,7 +19,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.google.code.gson.Gson;
 /**
  *
  * @author Sean
@@ -84,7 +83,7 @@ public class Merchandise extends HttpServlet {
             con = DriverManager.getConnection(url);
             st = con.createStatement();
             rs = st.executeQuery("SELECT * FROM merchandise WHERE id ="+id);
-            Gson gson = new Gson();
+            //Gson gson = new Gson();
             if (rs.next()) {
                 try (PrintWriter out = response.getWriter()) {
                     /* TODO output your page here. You may use following sample code. */
